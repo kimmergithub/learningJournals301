@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <header>
+      <h2>Hello World</h2>
+
+            <ul>
+              <li class="nav-items"><a href="" data-tab="delegation">Delegation</a></li>
+              <li class="nav-items"><a href="" data-tab="attributes">Attributes</a></li>
+            </ul>
+      <ul>
+        <li>home</li>
+        <li>about</li>
+        <li>contact</li>
+        <li>login</li>
+      </ul>
+
+    </header>
+    <main>
+        <section id="tab-content" id="delegation">
+          <ul class="menus" id="menuOne">
+            <h2>Menu 1</h2>
+            <li class="menu-item">Item 1</li>
+            <li class="menu-item">Item 2</li>
+            <li class="menu-item">Item 3</li>
+          </ul>
+
+          <ul class="menus" id="menuTwo">
+            <h2>Menu 2</h2>
+            <li class="menu-item">Item 4</li>
+            <li class="menu-item">Item 5</li>
+            <li class="menu-item">Item 6</li>
+          </ul>
+
+          <button type="button" name="adder1" data-menu="menuOne">Add a list to menu 1</button>
+          <button type="button" name="adder2" data-menu="menuTwo">Add a list to menu 2</button>
+        </section>
+        <section class="tab-content" id="attribute"></section>
+    </main>
+    <footer></footer>
+
+    <!-- VENDOR SCRIPTS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- LOCAL SCRIPTS -->
+    <script scr="appNotes.js" type="text/javascript"></script>
+  </body>
+</html>
