@@ -3,6 +3,9 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <script type='type/template' id='template'>
+    Hello {{world}}, my name is {{Scott}}, and I am a {{dev}}.
+    </script>
   </head>
   <body>
     <header>
@@ -40,8 +43,31 @@
           <button type="button" name="adder2" data-menu="menuTwo">Add a list to menu 2</button>
         </section>
         <section class="tab-content" id="attribute"></section>
+
+        <div id="app"></div>
+        <!-- target app div and append the content of our template  -->
+        <!-- 0=world 1=scott 2=dev -->
+
+<script type='text/x-handlebars-template'>
+  <!-- only can be impolenented after the handlebar.js template maker is utilized -->
+$('#app').append($('#template').html())
+
+  function compile (templ, expression ) {
+    return template.replace(/{{\d}}/, function (match, number){
+      console.log('match', match);
+      console.log('number', number);
+      return expression[number]
+    });
+  }
+  var template = $('template').html();
+  var content = compile(template, ['world', 'scott', 'dev']);
+</script>
+
     </main>
     <footer></footer>
+
+<!-- Regex in reverse === you would have to go through the entire line key by key and determine if an element was a then for each element that is equal to an alphabetical element you would have skip it until you reached something that wasn't a alphabetical element and you use that space to put in a the reg ex syntax and you would concatinate this with each element moving forward throughout the entire line of code for each element type.  Although certain element types wouldn't have the need to have to skipped over... for instance periods or other type of imputs... however number and special characters would need this. And then you have to be able to (concatinate things line by line by line === this would be the hardest section.) -->
+
 
     <!-- VENDOR SCRIPTS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
