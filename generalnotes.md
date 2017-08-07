@@ -1,10 +1,16 @@
 
-
-
-
 Calcifer
 
+RUN SERVER
+============
+SEQUENCE: terminal
+  npm run start
+  node server.js
+
+
+==========================
 SERVER.JS current backup:
+==========================
 
 'use strict';
 const express = require('express');
@@ -13,10 +19,13 @@ const cors = require('cors');
 const request = require('superagent');
 const Promise = require('bluebird');
 const debug = require('debug')('note:server');
-const mongoose = requi re('mongoose');
+const mongoose = require('mongoose');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+const MONGODB_URI = 'mongodb://localhost/calcifer'
+// This is MONGODB_URI is so heroku can do its thing to create a db... it will recognize it! When we heroku deploy
+mongoose.connect(MONGODB_URI);
 
 app.listen(PORT, () => {
   debug(`listening on ${PORT}`);
@@ -30,7 +39,8 @@ const assert = require('assert');
 
 // this points to the mongo data base === the mongo database is tells you the default is at 27017 on our local machine when we start the server in our terminal.
 // what follows the 27017 is the name of the db.
-mongoose.connect('mongodb://localhost:27017/calcifer');
+// THIS MAY BE NOT THE BEST CORSE OF ACTION BUT IS HERE AS A BACKUP
+// mongoose.connect('mongodb://localhost:27017/calcifer');
 
 mongoose.connection.once('open', function(){
   console.log('The Connection HAS BEEN MADE!!! Now make fireworks!')
